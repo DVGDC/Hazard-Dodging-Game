@@ -4,9 +4,13 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-	// Float values for player movement speed and jump force
+	// Float values for player movement speed, jump force, and dodge force
 	[SerializeField] private float speed;
 	[SerializeField] private float jumpForce;
+	[SerializeField] private float dodgeForce;
+
+	// Private variable to store whether or not the player has used their air-dodge yet
+	private bool hasDodged;
 
 	// Stores referrence to player's Rigidbody2D component
 	private Rigidbody2D rb;
@@ -35,6 +39,11 @@ public class PlayerMovement : MonoBehaviour
 		// Check if player is grounded using Physics2D's OverlapCircle method
 		bool isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundMask);
 
+		if (isGrounded)
+		{
+			hasDodged = false;
+		}
+
 		// Print whether or not player is currently grounded to console (will remove this line later)
 		Debug.Log(isGrounded);
 
@@ -48,6 +57,24 @@ public class PlayerMovement : MonoBehaviour
 			jumpBufferCountdown = jumpBufferWindow;
 		}
 
+		// If the player is in the air and hasn't used their air-dodge yet
+		if (!isGrounded && !hasDodged)
+		{
+			// Check for dodge inputs
+			if (Input.GetKeyDown(KeyCode.Q))
+			{
+				// Make player dodge
+				rb.velocity = new Vector2(-dodgeForce, dodgeForce);
+				hasDodged = true;
+			}
+			if (Input.GetKeyDown(KeyCode.E) && !hasDodged)
+			{
+				// Make player dodge
+				rb.velocity = new Vector2(dodgeForce, dodgeForce);
+				hasDodged = true;
+			}
+		}
+
 		// Maintain the time window for the buffered jump input
 		jumpBufferCountdown -= Time.deltaTime;
 
@@ -58,7 +85,11 @@ public class PlayerMovement : MonoBehaviour
 			rb.velocity = new Vector2(rb.velocity.x, jumpForce);
 		}
 
-		// Set horizontal velocity to this frame's moveSpeed
-		rb.velocity = new Vector2(moveSpeed, rb.velocity.y);
+		// Set horizontal velocity to this frame's moveSpeed (Obsolete)
+		//rb.velocity = new Vector2(moveSpeed, rb.velocity.y);
+
+		// Add force to move player horizontally
+		rb.AddForce(new Vector2(moveSpeed, 0),ForceMode2D.Force);
+		
 	}
 }
