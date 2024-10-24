@@ -13,6 +13,7 @@ public class Hazard : MonoBehaviour
         float spawnX = Random.Range(randomRange.min.x, randomRange.max.x);
 		float spawnY = Random.Range(randomRange.min.y, randomRange.max.y);
         Vector2 spawnPoint = new Vector2(spawnX, spawnY);
+        transform.position = spawnPoint;
     }
 
     // Update is called once per frame
