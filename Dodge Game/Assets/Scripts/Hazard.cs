@@ -9,7 +9,10 @@ public class Hazard : MonoBehaviour
     // Start is called before the first frame update
     protected void Start()
     {
-        
+        SpawnRange randomRange = spawnRanges[Random.Range(0, spawnRanges.Length)];
+        float spawnX = Random.Range(randomRange.min.x, randomRange.max.x);
+		float spawnY = Random.Range(randomRange.min.y, randomRange.max.y);
+        Vector2 spawnPoint = new Vector2(spawnX, spawnY);
     }
 
     // Update is called once per frame
