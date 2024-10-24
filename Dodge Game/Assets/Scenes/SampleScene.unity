@@ -628,6 +628,7 @@ GameObject:
   - component: {fileID: 1870284387}
   - component: {fileID: 1870284390}
   - component: {fileID: 1870284389}
+  - component: {fileID: 1870284391}
   m_Layer: 0
   m_Name: Spikeball
   m_TagString: Untagged
@@ -695,7 +696,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1870284386}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11, y: -1.5, z: 0}
+  m_LocalPosition: {x: 13.14, y: -1.5, z: 0}
   m_LocalScale: {x: 2.8, y: 2.8, z: 2.8}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -739,6 +740,23 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &1870284391
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1870284386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ba29fbc83f81f04abae381fb3c7d6ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnRanges:
+  - min: {x: -12, y: -1.5}
+    max: {x: -12, y: -1.5}
+  - min: {x: 12, y: -1.5}
+    max: {x: 12, y: -1.5}
 --- !u!1 &2071538574
 GameObject:
   m_ObjectHideFlags: 0
