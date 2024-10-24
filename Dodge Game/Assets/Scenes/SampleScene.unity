@@ -152,9 +152,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53bec0a499b00264cb3917464eeec1a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hazards: []
-  startDelay: 0
-  spawnInterval: 0
+  hazards:
+  - {fileID: 2474271755698519200, guid: 69b66a18b9e9fbc4f9c70793a410e64b, type: 3}
+  startDelay: 3
+  spawnInterval: 4
 --- !u!4 &247121142
 Transform:
   m_ObjectHideFlags: 0

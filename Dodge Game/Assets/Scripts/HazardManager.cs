@@ -25,6 +25,6 @@ public class HazardManager : MonoBehaviour
     {
         Instantiate(hazards[Random.Range(0, hazards.Length)]);
         yield return new WaitForSeconds(spawnInterval);
-        StartCoroutine(spawnHazard());
-    }
+		StartCoroutine(spawnHazard());
+	}
 }
