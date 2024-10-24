@@ -5,7 +5,6 @@ using UnityEngine;
 public class Spikeball : Hazard
 {
     [SerializeField] private float rollSpeed;
-	[SerializeField] private float rollTorque;
 
     private Rigidbody2D rb;
 
