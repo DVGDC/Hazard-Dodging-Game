@@ -89,7 +89,7 @@ public class PlayerMovement : MonoBehaviour
 		//rb.velocity = new Vector2(moveSpeed, rb.velocity.y);
 
 		// Add force to move player horizontally
-		rb.AddForce(new Vector2(moveSpeed, 0),ForceMode2D.Force);
+		rb.AddForce(new Vector2(moveSpeed * 100 * Time.deltaTime, 0),ForceMode2D.Force);
 		
 	}
 }
