@@ -7,7 +7,7 @@ public class PlayerMovement : MonoBehaviour
 	// Float values for player movement speed, jump force, and dodge force
 	[SerializeField] private float speed;
 	[SerializeField] private float jumpForce;
-	[SerializeField] private float dodgeForce;
+	[SerializeField] private Vector2 dodgeForce;
 
 	// Private variable to store whether or not the player has used their air-dodge yet
 	private bool hasDodged;
@@ -64,13 +64,13 @@ public class PlayerMovement : MonoBehaviour
 			if (Input.GetKeyDown(KeyCode.Q))
 			{
 				// Make player dodge
-				rb.velocity = new Vector2(-dodgeForce, dodgeForce);
+				rb.velocity = new Vector2(-dodgeForce.x, dodgeForce.y);
 				hasDodged = true;
 			}
 			if (Input.GetKeyDown(KeyCode.E) && !hasDodged)
 			{
 				// Make player dodge
-				rb.velocity = new Vector2(dodgeForce, dodgeForce);
+				rb.velocity = new Vector2(dodgeForce.x, dodgeForce.y);
 				hasDodged = true;
 			}
 		}
