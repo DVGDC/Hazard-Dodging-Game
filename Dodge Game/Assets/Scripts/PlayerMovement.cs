@@ -44,9 +44,6 @@ public class PlayerMovement : MonoBehaviour
 			hasDodged = false;
 		}
 
-		// Print whether or not player is currently grounded to console (will remove this line later)
-		Debug.Log(isGrounded);
-
 		// Take in horizontal input and multiply it by speed to get the player's velocity for this frame
 		float moveSpeed = Input.GetAxisRaw("Horizontal") * speed;
 

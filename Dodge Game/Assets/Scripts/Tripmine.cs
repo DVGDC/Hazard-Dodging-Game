@@ -11,9 +11,9 @@ public class Tripmine : Hazard
     // Start is called before the first frame update
     new void Start()
     {
-        mineCollider.enabled = false;
-        base.Start();
         mineCollider = GetComponent<BoxCollider2D>();
+		mineCollider.enabled = false;
+        base.Start();
         StartCoroutine(ArmMine());
     }
 

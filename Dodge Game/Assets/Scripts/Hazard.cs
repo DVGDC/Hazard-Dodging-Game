@@ -6,6 +6,10 @@ public class Hazard : MonoBehaviour
 {
     [SerializeField] private SpawnRange[] spawnRanges;
 
+    [SerializeField] private float lifeTime = 5;
+
+    [SerializeField] public float flingMagnitude = 1, upwardsFlingModifier = 1;
+
     // Start is called before the first frame update
     protected void Start()
     {
@@ -14,12 +18,13 @@ public class Hazard : MonoBehaviour
 		float spawnY = Random.Range(randomRange.min.y, randomRange.max.y);
         Vector2 spawnPoint = new Vector2(spawnX, spawnY);
         transform.position = spawnPoint;
+
+        Invoke("DespawnHazard", lifeTime);
     }
 
-    // Update is called once per frame
-    void Update()
+    private void DespawnHazard()
     {
-        
+        Destroy(gameObject);
     }
 }
 [System.Serializable]
