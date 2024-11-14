@@ -155,6 +155,7 @@ MonoBehaviour:
   hazards:
   - {fileID: 2474271755698519200, guid: 69b66a18b9e9fbc4f9c70793a410e64b, type: 3}
   - {fileID: 1654590779687561044, guid: f70c867e56529ff40a7e7330fde4a321, type: 3}
+  - {fileID: 3006154749931052359, guid: 2916abb470b430e418b3d45bceb0e2f1, type: 3}
   startDelay: 3
   spawnInterval: 4
 --- !u!4 &247121142
@@ -526,7 +527,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1285413936}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 2.7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

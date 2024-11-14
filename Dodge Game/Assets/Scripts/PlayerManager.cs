@@ -18,7 +18,7 @@ public class PlayerManager : MonoBehaviour
 	{
 		if ((hazardMask.value & 1 << collision.gameObject.layer) == 1 << collision.gameObject.layer)
 		{
-			Hazard hazard = collision.gameObject.GetComponent<Hazard>();
+			Hazard hazard = collision.transform.root.GetComponent<Hazard>();
 
 			Vector2 flingForce = (Vector2)(transform.position - collision.transform.position).normalized * 
 				hazard.flingMagnitude + 
