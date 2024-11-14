@@ -145,3 +145,7 @@ MonoBehaviour:
   flingMagnitude: 30
   upwardsFlingModifier: 10
   rollSpeed: 10
+  hazardMask:
+    serializedVersion: 2
+    m_Bits: 64
+  flingVelocity: {x: 8, y: 16}
