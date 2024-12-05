@@ -10,7 +10,7 @@ public class LerpAnimator : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+		PlayAnimation(animationData[0]);
     }
 
     // Update is called once per frame
@@ -21,6 +21,11 @@ public class LerpAnimator : MonoBehaviour
 
     public void PlayAnimation(AnimationData animData)
     {
+		StartCoroutine(AnimationCoroutine(animData));
+	}
+
+	private IEnumerator AnimationCoroutine(AnimationData animData)
+	{
 		float elapsedTime = 0f;
 		transform.localPosition = animData.startPosition;
 		transform.eulerAngles = animData.startRotation;
@@ -37,6 +42,8 @@ public class LerpAnimator : MonoBehaviour
 
 			transform.localScale = Vector2.LerpUnclamped(animData.startScale, animData.endScale,
 				animData.scaleCurve.Evaluate(animData.scaleCurve.length * animationProgress));
+
+			yield return new WaitForEndOfFrame();
 
 			elapsedTime += Time.deltaTime;
 		}
