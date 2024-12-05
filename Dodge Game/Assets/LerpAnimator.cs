@@ -7,21 +7,9 @@ public class LerpAnimator : MonoBehaviour
 {
 	[SerializeField] private AnimationData[] animationData;
 
-    // Start is called before the first frame update
-    void Start()
+    public void PlayAnimation(int animationIndex)
     {
-		PlayAnimation(animationData[0]);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    public void PlayAnimation(AnimationData animData)
-    {
-		StartCoroutine(AnimationCoroutine(animData));
+		StartCoroutine(AnimationCoroutine(animationData[animationIndex]));
 	}
 
 	private IEnumerator AnimationCoroutine(AnimationData animData)
