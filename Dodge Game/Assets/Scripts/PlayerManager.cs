@@ -4,6 +4,8 @@ public class PlayerManager : MonoBehaviour
 {
 	[SerializeField] private LayerMask hazardMask;
 
+	[SerializeField] private Vector2 flingForce;
+
 	private BoxCollider2D playerCollider;
 
 	private Rigidbody2D rb;
@@ -20,11 +22,9 @@ public class PlayerManager : MonoBehaviour
 		{
 			Hazard hazard = collision.transform.root.GetComponent<Hazard>();
 
-			Vector2 flingForce = (Vector2)(transform.position - collision.transform.position).normalized * 
-				hazard.flingMagnitude + 
-				Vector2.up * hazard.upwardsFlingModifier;
+			int dir = (int)Mathf.Sign(transform.position.x - hazard.transform.position.x);
 
-			rb.AddForce(flingForce, ForceMode2D.Impulse);
+			rb.AddForce(new Vector2(flingForce.x * dir, flingForce.y), ForceMode2D.Impulse);
 			GetComponent<PlayerMovement>().enabled = false;
 			playerCollider.enabled = false;
 		}

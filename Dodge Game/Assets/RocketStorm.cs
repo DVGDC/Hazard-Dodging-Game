@@ -23,5 +23,6 @@ public class RocketStorm : Hazard
     {
         Transform rocketTransform = Instantiate(rocketPrefab,transform).transform;
         rocketTransform.localPosition = new Vector2(Random.Range(-spawnXRange, spawnXRange), spawnYPos);
+        rocketTransform.parent = null;
     }
 }

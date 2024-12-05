@@ -85,6 +85,8 @@ public class PlayerMovement : MonoBehaviour
 		// Set horizontal velocity to this frame's moveSpeed (Obsolete)
 		//rb.velocity = new Vector2(moveSpeed, rb.velocity.y);
 
+		Debug.Log(moveSpeed);
+
 		// Add force to move player horizontally
 		rb.AddForce(new Vector2(moveSpeed * 100 * Time.deltaTime, 0),ForceMode2D.Force);
 		
