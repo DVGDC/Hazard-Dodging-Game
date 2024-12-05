@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class LerpAnimator : MonoBehaviour
 {
+	[SerializeField] private AnimationData[] animationData;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -16,6 +18,32 @@ public class LerpAnimator : MonoBehaviour
     {
         
     }
+
+    public void PlayAnimation(AnimationData animData)
+    {
+		float elapsedTime = 0f;
+		transform.localPosition = animData.startPosition;
+		transform.eulerAngles = animData.startRotation;
+		transform.localScale = animData.startScale;
+		while (elapsedTime < animData.animationLength)
+		{
+			float animationProgress = elapsedTime / animData.animationLength;
+
+			transform.localPosition = Vector2.LerpUnclamped(animData.startPosition, animData.endPosition,
+				animData.positionCurve.Evaluate(animData.positionCurve.length * animationProgress));
+
+			transform.eulerAngles = Vector3.LerpUnclamped(animData.startRotation, animData.endRotation,
+				animData.rotationCurve.Evaluate(animData.rotationCurve.length * animationProgress));
+
+			transform.localScale = Vector2.LerpUnclamped(animData.startScale, animData.endScale,
+				animData.scaleCurve.Evaluate(animData.scaleCurve.length * animationProgress));
+
+			elapsedTime += Time.deltaTime;
+		}
+		transform.localPosition = animData.endPosition;
+		transform.eulerAngles = animData.endRotation;
+		transform.localScale = animData.endScale;
+	}
 }
 
 [Serializable]
