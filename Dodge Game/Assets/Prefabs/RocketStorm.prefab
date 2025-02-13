@@ -29,7 +29,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 7449306888450300976}
+  - {fileID: 7234358208931609113}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -93,11 +93,43 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  startDelay: 2
+  startDelay: 1.2
   spawnInterval: 0.2
   spawnXRange: 1.25
   spawnYPos: 9
   rocketPrefab: {fileID: 7228061270173713156, guid: d3584fc3660a2b644a68d2926fccb0ff, type: 3}
+--- !u!1 &2756267603781889246
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7234358208931609113}
+  m_Layer: 0
+  m_Name: TargetAnchor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7234358208931609113
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2756267603781889246}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -1.1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 7449306888450300976}
+  m_Father: {fileID: 877882110317478505}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7443394367966142075
 GameObject:
   m_ObjectHideFlags: 0
@@ -124,11 +156,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7443394367966142075}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.8, z: 0}
+  m_LocalPosition: {x: 0, y: -0.79999995, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 877882110317478505}
+  m_Father: {fileID: 7234358208931609113}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1928712465118600417
@@ -171,7 +203,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: fe0af07581bb57641b20c138cf8298b2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -198,7 +230,7 @@ MonoBehaviour:
   animationData:
   - animationLength: 1
     startPosition: {x: 0, y: 0}
-    endPosition: {x: 0, y: -0.8}
+    endPosition: {x: 0, y: 0}
     positionCurve:
       serializedVersion: 2
       m_Curve:
@@ -286,7 +318,7 @@ MonoBehaviour:
       m_RotationOrder: 0
   - animationLength: 1
     startPosition: {x: 0, y: 0}
-    endPosition: {x: 0, y: -0.8}
+    endPosition: {x: 0, y: 0}
     positionCurve:
       serializedVersion: 2
       m_Curve:

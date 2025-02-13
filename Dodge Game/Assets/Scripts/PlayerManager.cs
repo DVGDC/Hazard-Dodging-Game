@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
@@ -22,11 +23,16 @@ public class PlayerManager : MonoBehaviour
 		{
 			Hazard hazard = collision.transform.root.GetComponent<Hazard>();
 
-			int dir = (int)Mathf.Sign(transform.position.x - hazard.transform.position.x);
-
-			rb.AddForce(new Vector2(flingForce.x * dir, flingForce.y), ForceMode2D.Impulse);
-			GetComponent<PlayerMovement>().enabled = false;
-			playerCollider.enabled = false;
+			KillPlayer(hazard.transform);
 		}
+	}
+
+	public void KillPlayer(Transform causeOfDeath)
+	{
+		int dir = (int)Mathf.Sign(transform.position.x - causeOfDeath.position.x);
+
+		rb.AddForce(new Vector2(flingForce.x * dir, flingForce.y), ForceMode2D.Impulse);
+		GetComponent<PlayerMovement>().enabled = false;
+		playerCollider.enabled = false;
 	}
 }

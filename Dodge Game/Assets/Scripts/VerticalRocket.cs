@@ -15,6 +15,10 @@ public class VerticalRocket : MonoBehaviour
 	private void OnCollisionEnter2D(Collision2D collision)
 	{
         //Instantiate any visual effects
+        if(collision.gameObject.name == "Player")
+        {
+            collision.gameObject.GetComponent<PlayerManager>().KillPlayer(transform);
+        }
         Destroy(gameObject);
 	}
 

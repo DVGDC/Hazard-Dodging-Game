@@ -154,11 +154,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hazards:
   - {fileID: 2474271755698519200, guid: 69b66a18b9e9fbc4f9c70793a410e64b, type: 3}
+  - {fileID: 2474271755698519200, guid: 69b66a18b9e9fbc4f9c70793a410e64b, type: 3}
   - {fileID: 1654590779687561044, guid: f70c867e56529ff40a7e7330fde4a321, type: 3}
   - {fileID: 3006154749931052359, guid: 2916abb470b430e418b3d45bceb0e2f1, type: 3}
   - {fileID: 877882110317478507, guid: 5224226f7a1fa8645a3cab1bf1c66a45, type: 3}
-  startDelay: 3
-  spawnInterval: 4
+  startDelay: 1
+  spawnInterval: 2.2
 --- !u!4 &247121142
 Transform:
   m_ObjectHideFlags: 0
@@ -572,7 +573,7 @@ MonoBehaviour:
   hazardMask:
     serializedVersion: 2
     m_Bits: 64
-  flingForce: {x: 0, y: 0}
+  flingForce: {x: 20, y: 40}
 --- !u!1 &1323746747
 GameObject:
   m_ObjectHideFlags: 0
