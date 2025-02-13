@@ -40,7 +40,7 @@ public class AudioManager : MonoBehaviour
 			// get and play random clip from Audiopack
 			activeAudioPacks.Add(audioPack);
 			StartCoroutine(AudioCooldown(audioPack));
-			AudioClip clip = audioPack.clips[UnityEngine.Random.Range(0, audioPack.clips.Length)];
+			AudioClip clip = audioPack.clips[Random.Range(0, audioPack.clips.Length)];
 			GetSourceAndPlayAudio(clip, audioPack.volume);
 		}
 	}

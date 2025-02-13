@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "New Audio Pack", menuName = "Audio")]
+[CreateAssetMenu(fileName = "New Audio Pack", menuName = "AudioPack")]
 public class AudioPack : ScriptableObject
 {
 	public AudioClip[] clips;

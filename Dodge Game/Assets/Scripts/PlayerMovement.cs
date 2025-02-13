@@ -27,6 +27,8 @@ public class PlayerMovement : MonoBehaviour
 	// If greater than zero, we know that a jump input is currently buffered
 	private float jumpBufferCountdown;
 
+	[SerializeField] private AudioPack jumpPack;
+
 	// Start is called upon scene initialization
 	void Start()
 	{
@@ -62,12 +64,14 @@ public class PlayerMovement : MonoBehaviour
 			{
 				// Make player dodge
 				rb.velocity = new Vector2(-dodgeForce.x, dodgeForce.y);
+				jumpPack.Play();
 				hasDodged = true;
 			}
 			if (Input.GetKeyDown(KeyCode.E) && !hasDodged)
 			{
 				// Make player dodge
 				rb.velocity = new Vector2(dodgeForce.x, dodgeForce.y);
+				jumpPack.Play();
 				hasDodged = true;
 			}
 		}
@@ -80,6 +84,7 @@ public class PlayerMovement : MonoBehaviour
 		{
 			// Set vertical velocity of player to jumpForce
 			rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+			jumpPack.Play();
 		}
 
 		// Set horizontal velocity to this frame's moveSpeed (Obsolete)
