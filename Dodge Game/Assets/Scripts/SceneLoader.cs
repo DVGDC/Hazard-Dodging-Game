@@ -1,20 +1,26 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
 {
-    [SerializeField] private string gameScene;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+	#region Singleton
+	public static SceneLoader Instance { get; private set; }
 
-    // Update is called once per frame
-    void Update()
+	private void Awake()
+	{
+		if(Instance != null && Instance != this)
+		{
+			Destroy(this);
+		}
+		else
+		{
+			Instance = this;
+		}
+	}
+	#endregion
+
+	public void LoadScene(string scene)
     {
-        if (Input.GetKeyDown(KeyCode.KeypadEnter)) SceneManager.LoadScene(gameScene);
-    }
+		SceneManager.LoadScene(scene);
+	}
 }

@@ -98,6 +98,7 @@ MonoBehaviour:
   spawnXRange: 1.25
   spawnYPos: 9
   rocketPrefab: {fileID: 7228061270173713156, guid: d3584fc3660a2b644a68d2926fccb0ff, type: 3}
+  expandPack: {fileID: 11400000, guid: 1420d895db5c312418847cd08e1ebf88, type: 2}
 --- !u!1 &2756267603781889246
 GameObject:
   m_ObjectHideFlags: 0

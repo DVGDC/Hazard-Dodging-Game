@@ -11,11 +11,16 @@ public class RocketStorm : Hazard
 
 	[SerializeField] private GameObject rocketPrefab;
 
+    [SerializeField] private AudioPack expandPack;
+
 
     // Start is called before the first frame update
     new void Start()
     {
         base.Start();
+
+        expandPack.Play();
+
         InvokeRepeating("SpawnRocket", startDelay, spawnInterval);
     }
 

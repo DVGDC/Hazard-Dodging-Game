@@ -4960,3 +4960,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   downwardsForce: 30
+  fallPack: {fileID: 11400000, guid: 1589d4f97a0a9dc458182f2effbd5f03, type: 2}
+  explosionPack: {fileID: 11400000, guid: 5ddc927b4bdc09245a09eb33bd2a6c85, type: 2}

@@ -104,7 +104,17 @@ MonoBehaviour:
   lifeTime: 6
   flingMagnitude: 20
   upwardsFlingModifier: 40
+  spawnEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  despawnEvent:
+    m_PersistentCalls:
+      m_Calls: []
   armDelay: 1.6
+  explodeMask:
+    serializedVersion: 2
+    m_Bits: 65
+  explosionPack: {fileID: 11400000, guid: bd4023dd023fba142b8ab01fb11cbad0, type: 2}
 --- !u!61 &1654590779687561041
 BoxCollider2D:
   m_ObjectHideFlags: 0

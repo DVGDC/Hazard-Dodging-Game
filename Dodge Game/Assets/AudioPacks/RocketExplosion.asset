@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86d9a2d9c0e6e584594f09747e34c3be, type: 3}
+  m_Name: RocketExplosion
+  m_EditorClassIdentifier: 
+  clips:
+  - {fileID: 8300000, guid: 0732395c168f5bd4699547bf48d7ba17, type: 3}
+  - {fileID: 8300000, guid: ff83a483be27b33419d604fa608791f1, type: 3}
+  - {fileID: 8300000, guid: 66cb69242c781704a8e5b1636668ade3, type: 3}
+  volume: 0.2
+  cooldownTime: 0.05
